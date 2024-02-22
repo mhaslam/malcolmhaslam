@@ -1,0 +1,110 @@
+.cv-main-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 10mm auto;
+  background: white;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+
+/* Media queries to adjust scale for smaller screens */
+@media screen and (max-width: 768px) {
+  .cv-main-page {
+    transform: scale(0.7); /* Adjust the scale as needed */
+    transform-origin: top left; /* Maintain position from top left corner */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cv-main-page {
+    transform: scale(0.5); /* Adjust the scale as needed */
+    transform-origin: top left; /* Maintain position from top left corner */
+  }
+}
+
+.cv-sub-page {
+  /* background: url(/assets/images/banner.svg); */
+  /* padding: 1.5cm; */
+  white-space: normal;
+  padding: 60px;
+  height: 297mm;
+}
+
+
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  html,
+  .cv-container {
+    width: 210mm;
+    height: 297mm;
+  }
+  .cv-main-page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
+}
+* {
+  color: #1c1c1b;
+  font-family: Lato;
+}
+
+.cv-left{
+  padding-right: 0;
+}
+.cv-right{
+  padding-left: 0;
+}
+
+:host ::ng-deep .item p {
+  margin: 0;
+}
+:host ::ng-deep .item {
+  margin: 10px 0 10px 0;
+}
+:host ::ng-deep .h5 {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+:host ::ng-deep .h6 {
+  font-size: 0.8rem;
+}
+:host ::ng-deep hr {
+  display: block;
+  background: transparent;
+  border: none;
+  border-top: solid 2px #194F6E;
+  margin:0;
+  /* margin: 0 1.5cm 0 0; */
+  opacity: 1;
+}
+
+.cv-top{
+  margin-bottom: 30px;
+}
+
+
+.print-icon-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Optional: Add styles for the icon */
+.print-icon {
+  color: #194F6E;
+  font-size: 12px; /* Adjust icon size as needed */
+}
+.print-icon-button {
+  float: right; /* Float the language selector to the right */
+  margin-top: 20px; /* Adjust top margin */
+  font-size: 10px;
+}

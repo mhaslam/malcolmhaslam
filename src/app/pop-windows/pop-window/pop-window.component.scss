@@ -1,0 +1,118 @@
+.popupContainer {
+  position: absolute;
+    background: rgb(56, 12, 42, 0.9);
+    //border: 1px solid #ccc;
+    height: 0;
+    //width: 0;
+    box-shadow: -4px 4px 2px 0 rgba(0,0,0,0.3);
+    white-space: normal;
+    outline: 0;
+    margin: 1vh 0.5vw;
+    opacity: 0;
+    transform: translate(10px, 10px);
+    //transition: all 0.25s;
+    //transform: translateY(-50%) translateX(-50%) scale(0);    
+    &.active{
+      width: 50%;
+      height: auto;
+      max-height: 100vh;
+     // transform: translateY(-50%) ftranslateX(-50%) scale(1);
+      opacity: 1;
+    }
+    &.expanded{
+      width: 100%;
+      transform: translate(0px, 0px);
+      margin: 0;
+      height: 100vh;
+    }
+
+  }
+
+  /* Media queries to adjust scale for smaller screens */
+@media screen and (max-width: 768px) {
+  .popupContainer .active {
+      width: 80%;
+  }
+}
+
+
+///////////////
+///TITLE BAR
+///////////////
+.title-bar{
+  background: rgb(48, 48, 48);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.title{
+  height: 100%;
+  font-size: 13px;
+  font-weight: light;
+  color: #2c2c2c;
+}
+.title h2{
+  color: #b5b5b5;
+  text-align: center;
+  margin:0;
+  font-family: 'xkcd';
+  font-size: 20px;
+}
+
+.window-buttons {
+  text-align: end;
+}
+.window-btn {
+  padding-right: 10px;
+  font-size: 15px;
+}
+
+.window-btn fa-icon{
+  color: #b5b5b5;
+}
+.window-btn fa-icon:hover{
+  color: #dc612c;
+}
+
+//////////////////
+//END TITLE BAR 
+///////////////
+
+
+
+//////////////////
+//BODY
+///////////////
+
+$title-bar-height:30px;
+.popup-body{
+  font-size: 14px;
+  font-family: monospace;
+  padding: 1vh 0.5vw;
+  overflow-y: auto;
+  max-height: calc(100vh - 50px);
+}
+
+pre, a {
+  color: white;
+}
+
+.comment       { color: #857F6B; font-style: italic; }
+.selector      { color: #E69F0F; }
+.selector .key { color: #64D5EA; }
+.key           { color: #64D5EA; }
+.value         { color: #BE84F2; }
+.value.px      { color: #F92772; }
+
+//////////////////
+//END BODY
+///////////////
+.joke-wrapper{
+  text-align: center;
+
+}
+.joke-wrapper img{
+  max-width: -webkit-fill-available;
+}

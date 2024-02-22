@@ -1,0 +1,22 @@
+
+
+<div class="skill-level-indicator">
+  <div class="skill-name">
+    <p class="h6 fw-bold">
+      {{skill.title}}
+    </p>  
+  </div>
+  <div class="skill-items">
+    <div class="row">
+      <div class="col-md-6" *ngFor="let item of skill.items; let i = index">
+        <div class="skill-item">
+            <p class="skill-item-text">{{item.title}}</p>
+        </div>
+        <!-- Check if the current index + 1 is divisible by 4 to start a new row -->
+        <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+      </div>
+   </div>
+  </div>
+</div>
+
+

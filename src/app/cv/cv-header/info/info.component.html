@@ -1,0 +1,13 @@
+
+<div class="info-wrapper" *ngIf="infos">
+    <div class="info-item" *ngFor="let info of infos">
+        <div class="info-content">
+            <span class="info-icon">
+                <fa-icon [icon]="info.icon"></fa-icon>
+                <!-- <i [ngClass]="info.icon"></i> -->
+            </span>
+            <p class="info-text">{{info.text}}</p>
+
+        </div>
+    </div>
+</div>

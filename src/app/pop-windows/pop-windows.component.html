@@ -1,0 +1,3 @@
+ <div class="pop-wrapper" *ngFor="let window of windows | keyvalue">
+    <app-pop-window *ngIf="window.key" [windowKey]="window.key"></app-pop-window>
+</div> 

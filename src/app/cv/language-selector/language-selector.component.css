@@ -1,0 +1,41 @@
+.container {
+    float: right; /* Float the container to the right */
+  }
+  
+  .language-selector {
+    float: right; /* Float the language selector to the right */
+    margin-top: 20px; /* Adjust top margin */
+    font-size: 10px;
+  }
+  
+  #lang-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    /* padding: 8px; */
+    font-size: 10px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    color: #333;
+  }
+  
+  #lang-select:hover {
+    color: #444;
+  }
+  
+  .language-selector::after {
+    content: '\25BC';
+    margin-right: 5px; /* Adjust left margin */
+    color: #666;
+    font-size: 10px;
+  }
+  
+  .language-selector:hover::after {
+    color: #444;
+  }
+  
+
+
+  

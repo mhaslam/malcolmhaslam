@@ -1,0 +1,31 @@
+<div class="experience-wrapper">
+
+    <div class="subgroup" *ngIf="data">
+        <p class="h5 fw-bold title">{{data.config.employment}}</p>
+        <hr>
+        <div class="employmentsWrapper" *ngIf="(data.body.employments)">
+            <div class="item" *ngFor="let employment of data.body.employments">
+                <app-experience [employment]="employment"></app-experience>
+            </div>
+        </div>
+    </div>
+    <div class="subgroup" *ngIf="data">
+        <p class="h5 fw-bold title">{{data.config.ventures}}</p>
+        <hr>
+        <div class="employmentsWrapper" *ngIf="(data.body.ventures)">
+            <div class="item" *ngFor="let employment of data.body.ventures">
+                <app-experience [employment]="employment"></app-experience>
+            </div>
+
+        </div>
+    </div>
+    <div class="subgroup" *ngIf="data">
+        <p class="h5 fw-bold title">{{data.config.education}}</p>
+        <hr>     
+        <div class="educationWrapper" *ngIf="(data.body.education)">
+            <div class="item" *ngFor="let institution of data.body.education" >
+                <app-experience [employment]="institution"></app-experience>
+            </div>
+        </div>
+    </div>
+

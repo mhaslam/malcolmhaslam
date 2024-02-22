@@ -1,0 +1,104 @@
+{
+    "config":{
+        "headshotUrl":"/assets/images/me.jpeg",
+        "info":"INFO",
+        "skills":"COMPÉTENCES",
+        "languages":"LANGUES",
+        "employment":"EXPÉRIENCES PROFESSIONNELLES",
+        "ventures":"PROJETS ENTREPRENEURIAUX",
+        "education":"ÉDUCATION"
+
+    },
+    "header":{
+        "title":"MALCOLM HASLAM",
+        "subtitle":"INGÉNIEUR CONCEPTION ET DÉVELOPPEMENT DE LOGICIELS",
+        "info":[
+            {"text":"+33 7 60 50 90 32","icon":"fa fa-phone"},
+            {"text":"macolmhaslam@gmail.com","icon":"fa fa-envelope"},
+            {"text":"02/10/1984","icon":"fa fa-birthday-cake"},
+            {"text":"malcolmhaslam.com","icon":"fa fa-globe"}
+        ]
+
+        
+    },
+    "body":{
+        "info":{
+            "TÉLÉPHONE":"+33 760509032",
+            "e-mail":"macolmhaslam@gmail.com",
+            "DATE DE NAISSANCE":"02/10/1984",
+            "NATIONALITÉ":"Argentine (resident français)"
+        },
+        "skills":{
+            "JavaScript/TypeScript":4,
+            "Java":4,
+            "CSS":4,
+            "MySQL/PostgreSQL":3,
+            "MongoDB":3,
+            "Angular":3,
+            "React":2
+        },
+        "languages":{
+            "Espagnol":5,
+            "Anglais":5,
+            "Francais":4
+        },
+        "employments":[
+            {
+                "title":"Developpeur R&D, Fujitsu RunMyProcess",
+                "location":"Paris, France",
+                "date":"2013-2020",
+                "projects":[
+                    "La conception et le développement du Secure Enterprise Connector(SEC). Un logiciel conçu pour accéder aux services on-premise (JDBC, SAP, LDAP, SMTP, etc.) via un tunnel sécurisé basé sur le SDC de Google.",
+                    "Développement back-end (JAVA).",
+                    "Conception et développement du SDK RunMyProcess pour les applications Javascript.",
+                    "Développement du moteur de documentation de l'entreprise. Un moteur Markdoc modiwé pour générer la documentation markdofn (python)",
+                    "Trans&ormation du look:&eel de l'entrepriseq documentation et pages statics (CSS)",
+                    "Analyse de technologies (documentation et &ront-end)"
+                ]
+            },
+            {
+                "title":"Project engineer / Software architect, Tegik",
+                "location":"Monterrey, Mexico",
+                "date":"2009-2012",
+                "projects":[
+                    "Conception, customisation et installation de solutions en open-source BPM CSS(ProcessMaker), ERP(OpenBravo) et BI (Pentaho): codes sources PHP/mySQL.",
+                    "Gestion d'une équipe de développeurs et de lèassurance qualité.",
+                    "Confguration de systmes et gestion de base de données.",
+                    "Rapports Jasper pour des systzmes ERP utilisant Jasper Report.",
+                    "Pentaho BI. Conception et application de différents cubes pour des rapports de BI (projet ERP et BPM).",
+                    "Production de blueprints et de spécifcations fonctionnelles pour l'analyse d'exigences du client sur site."
+                ]
+            },
+            {
+                "title":"Software engineer, World Software Services/Temasis",
+                "location":"San Pedro, Mexico",
+                "date":"2008-2009",
+                "projects":[
+                    "Chef de projet: Conception et développement d'un administrateur de projet: PHP et JavaScript (librairies extJS). Gestion de projets de projets et Q/A pour Temasis.",
+                    "Développeur Jr: Conception et développement de BNXI - l'application web de Banorte (banque mexicaine): C#.NET/Javascript avec SQLServer05, et d'une application stand-alone VB.NET pour un système de calcul des paies CSLA.NET pour WSS"
+                ]
+            }
+        ],
+        "ventures":[
+            {
+                "title":"Fondateur/Propriétaire  MH Speciality Coffee",
+                "location":"Crolles, France",
+                "date":"2020-2024",
+                "projects":[
+                    "Planification du menu, développement des Produits et Gestion de stock",
+                    "Maintenance de machines",
+                    "Planification des affaires, comptabilité, stratégie et tenue de livres",
+                    "Service client, ventes et relations avec fournisseurs"
+                ]
+            }
+        ],
+        "education":[
+            {
+                "title":"BACHELOR OF SCIENCE: Mechatronics engineering , Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)",
+                "date":"2013-2007"
+            }
+        ]
+            
+        
+    }
+}

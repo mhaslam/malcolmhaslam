@@ -1,0 +1,32 @@
+.borderless .list-group-item {
+    border: none;
+  }
+  
+  .list-group-item{
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    display: flex; /* Use flexbox to align content and bullet */
+  }
+  
+  ul li::before {
+    content: "\25E6";
+    margin-right: 5px; /* Adjust the spacing between bullet and content */
+    font-size: 10px;
+  }
+  .locationP{
+    float:right;
+  }
+  .experience-right{
+    text-align: right;
+  }
+  .dateP{
+    font-size: 8px;
+    float:right;
+  }

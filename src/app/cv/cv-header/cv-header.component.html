@@ -1,0 +1,32 @@
+<div class="row" *ngIf="headerData">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="title-box">
+            <div class="row">
+                
+                <div class="col-12">
+                    <p class = 'title' *ngIf="headerData.title" >{{headerData.title}}</p>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-12 subtitle text-uppercase fw-bold ">
+                <p *ngIf="headerData.subtitle">{{headerData.subtitle}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 subtitle">
+                <p *ngIf="headerData.expYears">{{headerData.expYears}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="headshot" *ngIf="headshotUrl">
+            <img [src]="headshotUrl" alt="headshot">
+        </div>
+    </div>
+</div>  
+<div class="row" *ngIf="headerData && headerData.info">
+    <app-info [infos]="headerData.info"></app-info>
+</div>

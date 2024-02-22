@@ -1,0 +1,41 @@
+.title-box {
+  align-items: center;
+  justify-content: center;
+  /* width: 8.5cm; */
+  /* background-color: #ccc; */
+  /* height: 3cm; */
+  border: 1.5px solid;
+  margin: auto;
+  padding: 22px;
+}
+
+.title{
+  font-size: 20px;
+  font-family: Lato;
+  text-align: center;
+  font-weight: 700;
+}
+p{
+  margin-bottom: 5px;
+}
+.subtitle{
+  font-family: Lato;
+  text-align: center;
+}
+.subtitle p{
+  font-size: 10px;
+}
+
+.headshot {
+  width: 100px; /* Adjust dimensions as needed */
+  height: 10  0px; /* Adjust dimensions as needed */
+  border-radius: 50%; /* Makes the container circular */
+  overflow: hidden; /* Clip the image to the circular shape */
+  opacity: 0.5;
+}
+
+.headshot img {
+  width: 100%; /* Ensure the image fills the container */
+  height: 100%; /* Ensure the image fills the container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}

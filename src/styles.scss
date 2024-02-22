@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+}
+html, body { height: 100%; }
+body{
+  font-family: 'Lato', Georgia, 'Times New Roman', Times, serif;
+}
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+    perspective: 1000px;
+  }
+  
+  #style-text {
+    transform: translateX(98.5%) rotateY(-10deg);
+    transform-origin: right;
+    max-height: 93.1vh;
+  }
+  @font-face {
+    font-family: "xkcd";
+    src: local("xkcd-script"), url(/assets/fonts/xkcd-script.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/lato/Lato-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/lato/Lato-Bold.ttf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/lato/Lato-Thin.ttf');
+  font-weight: 100;
+}
+.title{
+  letter-spacing: 5px;
+}
+.subgroup{
+  margin-bottom: 30px;
+}
+p{
+  font-size: 12px;
+}
+
+.title{
+  color:#194f6e;
+}
+.fa{
+  color:#194f6e;
+}

@@ -1,0 +1,23 @@
+<div class="cv-container">
+
+    <div class="cv-main-page" #printableArea>
+    <app-language-selector></app-language-selector>
+    <!-- <button class="print-icon-button" (click)="generatePdf(printableArea)">
+        <i class="fa fa-print print-icon" aria-hidden="true"></i>
+    </button> -->
+      <div class="cv-sub-page">
+        <div class="row cv-top">
+            <div class="col-12">
+                
+                <app-cv-header></app-cv-header>
+            </div>
+        </div>
+        <div class="row cv-bottom">
+            <div class="col-12">
+                <app-cv-body></app-cv-body>            
+            </div>
+        </div>
+
+      </div>    
+    </div>
+</div>

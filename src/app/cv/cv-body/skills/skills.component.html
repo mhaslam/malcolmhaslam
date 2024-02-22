@@ -1,0 +1,45 @@
+<div class="skills-wrapper" *ngIf="configData">
+
+    <div class="subgroup" *ngIf="skills">
+        <p class="h5 fw-bold title text-uppercase">{{configData.skills}}</p>
+        <hr>
+        <div class="row skills-body">
+            <div class="col-12" *ngFor="let skill of skills;">
+                <app-skill [skill]="skill"></app-skill>
+            </div>
+        </div>
+    </div>
+
+    <div class="subgroup" *ngIf="languages">
+        <p class="h5 fw-bold title text-uppercase">{{configData.languages}}</p>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="language" *ngFor="let language of languages;">
+                    <div class="item">
+                        <p class="h6 ">{{language.title}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="subgroup" *ngIf="interests">
+        <p class="h5 fw-bold title text-uppercase">{{configData.interests}}</p>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="language" *ngFor="let interest of interests;">
+                    <div class="item">
+                        <p class="h6 fw-bold">{{interest.title}}</p>
+                        <p class="h6">{{interest.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+

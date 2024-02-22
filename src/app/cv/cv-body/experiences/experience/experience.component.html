@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-7">
+        <p class="h6 fw-bold text-uppercase">{{employment.company}}</p>
+        <p class="h6">{{employment.title}}</p>
+    </div>
+    <div class="col-5">
+        <div class="row experience-right">
+                <p class="locationP">{{employment.location}}</p>
+        </div>
+        <div class="row experience-right">
+           <p class="dateP"> {{employment.date}}</p>         
+        </div>
+    </div>
+</div>
+<ul class="list-group borderless" *ngIf="(employment.projects && employment.projects.length)">
+    <li class="list-group-item" *ngFor="let project of employment.projects">
+        <p>
+            {{project}}
+        </p>
+    </li>
+    
+</ul>
