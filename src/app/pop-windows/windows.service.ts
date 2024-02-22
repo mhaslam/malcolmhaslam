@@ -54,9 +54,7 @@ export class WindowsService {
   }
   
   openWindow(windowKey:number){
-    console.log("OPENING "+windowKey);
     const selectedWindow:WindowInterface = this.windows[windowKey];
-    console.log("OPENING "+selectedWindow.title);
     if (selectedWindow.isActive) {
       // window already open, bring it to the front
       this.bringToFront(windowKey);

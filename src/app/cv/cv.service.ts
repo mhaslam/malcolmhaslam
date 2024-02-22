@@ -25,7 +25,6 @@ export class CvService {
     }
 
     loadData(lang:LANG){
-        console.log("CV SETTINGS");
 
         this.dataManagementService.getJSON(lang).subscribe(data => {
             this.isDataLoaded = true;
@@ -34,7 +33,6 @@ export class CvService {
           });
     }
     setData(data:I18nInterface){
-        console.log("DATA BEING SET");
         this.data=data;
         this.dataChanged.next(JSON.parse(JSON.stringify(data)));
     }

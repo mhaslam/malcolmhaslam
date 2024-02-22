@@ -36,7 +36,6 @@ export class LanguageSelectorComponent implements OnInit {
 
 
   ngOnDestroy() {
-    console.log("UNSUBSCRIBE");
     this.subscription.unsubscribe();
   }
 }

@@ -25,8 +25,6 @@ export class PopWindowsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
       this.subscription=this.windowsService.activeWindowsChanged.subscribe(()=>{
         this.windows = this.windowsService.getActiveWindows();
-        console.log("ACTIVE WINDOWS");
-        console.log(this.windows);
       })
   }
   objectKeys(obj) {

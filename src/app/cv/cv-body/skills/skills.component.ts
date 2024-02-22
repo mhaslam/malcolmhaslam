@@ -35,7 +35,6 @@ export class Skills implements OnInit, OnDestroy{
   }
 
   ngOnDestroy() {
-    console.log("UNSUBSCRIBE");
     this.subscription.unsubscribe();
   }
 

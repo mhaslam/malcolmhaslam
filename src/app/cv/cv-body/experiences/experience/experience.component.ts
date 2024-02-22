@@ -9,12 +9,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })
-export class ExperienceComponent implements OnInit{
+export class ExperienceComponent {
 
   @Input() employment:EmploymentInterface;
 
-  ngOnInit(): void {
-    console.log("HERE");
-      console.log(this.employment);
-  }
 }

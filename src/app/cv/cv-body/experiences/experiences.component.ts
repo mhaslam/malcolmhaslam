@@ -26,7 +26,6 @@ export class ExperiencesComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy() {
-    console.log("UNSUBSCRIBE");
     this.subscription.unsubscribe();
   }
 

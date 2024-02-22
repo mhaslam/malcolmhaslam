@@ -49,19 +49,15 @@ export class PopWindowComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.enumCoparator = WindowsEnum;
-    console.log("COMPARE " + this.enumCoparator.resume + " " + this.windowKey)
     const windowObject: WindowInterface = this.windowsService.getWindowObject(this.windowKey);
     this.title = windowObject.title;
     this.isActive = windowObject.isActive;
     this.zIndex = windowObject.zIndex;
     this.position = windowObject.position;
-    console.log("WINDOW  " + this.windowKey + " " + this.title);
 
     this.subscription = this.windowsService.zIndexWindowsChanged.subscribe(() => {
-      console.log(this.title + " CHANGED ");
       const window = this.windowsService.getWindowObject(this.windowKey)
       this.zIndex = window.zIndex;
-      console.log(this.title + "  " + this.zIndex);
     })
 
     if (+this.windowKey === +WindowsEnum.joke) {
@@ -76,7 +72,6 @@ export class PopWindowComponent implements OnInit, OnDestroy {
   }
 
   onWindowClick() {
-    console.log(this.title);
     this.windowsService.bringToFront(this.windowKey);
   }
 
