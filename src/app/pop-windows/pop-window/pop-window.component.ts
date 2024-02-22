@@ -1,12 +1,12 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { FaIconComponent, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faClose, faExpand, faMinus, faPrint, faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
-import { WindowInterface, WindowsEnum, WindowsService } from '../windows.service';
 import { CvComponent } from '../../cv/cv.component';
 import { CvService } from '../../cv/cv.service';
 import { DataManagementService } from '../../data-management.service';
-import { faClose, faExpand, faMinus, faPrint, faRefresh } from '@fortawesome/free-solid-svg-icons';
-import { FaIconComponent, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WindowInterface, WindowsEnum, WindowsService } from '../windows.service';
 
 
 @Component({

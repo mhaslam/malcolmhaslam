@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WindowsService, WindowsEnum} from '../pop-windows/windows.service';
+import { WindowsEnum, WindowsService } from '../pop-windows/windows.service';
 
 
 @Component({

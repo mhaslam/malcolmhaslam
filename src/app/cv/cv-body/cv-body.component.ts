@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Skills } from "./skills/skills.component";
 import { ExperiencesComponent } from "./experiences/experiences.component";
+import { Skills } from "./skills/skills.component";
 
 @Component({
     selector: 'app-cv-body',

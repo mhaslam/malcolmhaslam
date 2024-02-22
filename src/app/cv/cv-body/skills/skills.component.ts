@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { SkillComponent } from './skill/skill.component';
 import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CvService } from '../../cv.service';
 import { I18nInterface, SkillsInterface } from '../../../data-management.service';
+import { CvService } from '../../cv.service';
+import { SkillComponent } from './skill/skill.component';
 
 @Component({
   selector: 'app-skills',

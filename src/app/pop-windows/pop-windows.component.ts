@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PopWindowComponent } from './pop-window/pop-window.component';
-import { WindowInterface, WindowsService } from './windows.service';
 import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { PopWindowComponent } from './pop-window/pop-window.component';
+import { WindowsService } from './windows.service';
 
 
 @Component({

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { EmploymentInterface } from '../../../../data-management.service';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { EmploymentInterface } from '../../../../data-management.service';
 
 @Component({
   selector: 'app-experience',

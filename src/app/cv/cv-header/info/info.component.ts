@@ -1,9 +1,8 @@
-import { Component, Input, OnDestroy, OnInit, input } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { I18nInterface } from '../../../data-management.service';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { I18nInterface } from '../../../data-management.service';
 
 @Component({
   selector: 'app-info',

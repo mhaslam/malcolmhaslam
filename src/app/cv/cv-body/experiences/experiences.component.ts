@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CvService } from '../../cv.service';
-import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { I18nInterface } from '../../../data-management.service';
+import { CvService } from '../../cv.service';
 import { ExperienceComponent } from './experience/experience.component';
 
 @Component({

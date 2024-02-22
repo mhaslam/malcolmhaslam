@@ -1,14 +1,12 @@
-import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { CvHeaderComponent } from "./cv-header/cv-header.component";
-import { CvBodyComponent } from "./cv-body/cv-body.component";
-import { CvService } from './cv.service';
 import { HttpClientModule } from '@angular/common/http';
-import { LANG } from '../data-management.service';
-import { LanguageSelectorComponent } from "./language-selector/language-selector.component";
-import { jsPDF } from 'jspdf';
+import { AfterViewChecked, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import html2canvas from 'html2canvas';
-
-
+import { jsPDF } from 'jspdf';
+import { LANG } from '../data-management.service';
+import { CvBodyComponent } from "./cv-body/cv-body.component";
+import { CvHeaderComponent } from "./cv-header/cv-header.component";
+import { CvService } from './cv.service';
+import { LanguageSelectorComponent } from "./language-selector/language-selector.component";
 
 
 @Component({

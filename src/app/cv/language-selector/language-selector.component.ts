@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { LANG } from '../../data-management.service';
 import { CommonModule } from '@angular/common';
-import { CvService } from '../cv.service';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { LANG } from '../../data-management.service';
+import { CvService } from '../cv.service';
 
 @Component({
   selector: 'app-language-selector',
