@@ -14,6 +14,7 @@
     //transform: translateY(-50%) translateX(-50%) scale(0);    
     &.active{
       width: 50%;
+      min-width: fit-content;
       height: auto;
       max-height: 100vh;
      // transform: translateY(-50%) ftranslateX(-50%) scale(1);
@@ -31,7 +32,8 @@
   /* Media queries to adjust scale for smaller screens */
 @media screen and (max-width: 768px) {
   .popupContainer .active {
-      width: 80%;
+    width: 80%;
+    min-width: fit-content;
   }
 }
 
@@ -61,6 +63,16 @@
   font-size: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .title h2{
+    color: #b5b5b5;
+    text-align: center;
+    margin:0;
+    font-family: 'xkcd';
+    font-size: 60px;
+  }
+}
+
 .window-buttons {
   text-align: end;
 }
@@ -75,6 +87,23 @@
 .window-btn fa-icon:hover{
   color: #dc612c;
 }
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (max-width: 1000px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (max-width: 1000px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (max-width: 1000px),
+only screen and (        min-device-pixel-ratio: 2)      and (max-width: 1000px),
+only screen and (                min-resolution: 192dpi) and (max-width: 1000px),
+only screen and (                min-resolution: 2dppx)  and (max-width: 1000px),
+only screen and (max-width: 750px) { 
+
+  .window-btn {
+    padding-right: 20px;
+    font-size: 40px;
+  }
+
+}
+
 
 //////////////////
 //END TITLE BAR 
@@ -111,8 +140,8 @@ pre, a {
 ///////////////
 .joke-wrapper{
   text-align: center;
-
 }
 .joke-wrapper img{
   max-width: -webkit-fill-available;
+  min-width: 60%;
 }
