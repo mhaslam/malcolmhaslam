@@ -1,6 +1,7 @@
 <div class="wrapper">
       <!-- Header -->
-      <header class = "main-header">
+      <header class = "main-header" [ngStyle]="{'background-image': 'url(' + wallpaperPath + ')'}">
+        <app-toolbar></app-toolbar>
         <div class="container">
             <div id= "intro-container" class="intro-text">
                 <!--img class="main-avatar" src="img/me-nofeatures.svg" alt=""-->
@@ -23,10 +24,12 @@
             </div>
             <div id="intro-text-container" class="intro-text">
                 <div class="hello-text">
-                    <h1>Hi, I'M MALCOLM</h1>
+                    <h1 class="stroke" data-text="Hi, I'M MALCOLM">Hi, I'M MALCOLM</h1>
+                    <!-- <h1 class = "no-stroke">Hi, I'M MALCOLM</h1> -->
                 </div>
                 <div class="typewriter">
-                    <h1>I'M A WEB DEVELOPER</h1>
+                    <h1 class = "stroke" data-text="I'M A WEB DEVELOPER">I'M A WEB DEVELOPER</h1>
+                    <!-- <h1 class = "no-stroke">I'M A WEB DEVELOPER</h1> -->
                 </div>                
             </div>
 

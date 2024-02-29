@@ -1,7 +1,7 @@
 // src/app/data.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 
 export enum FileDirectoryEnum{
@@ -62,19 +62,35 @@ export interface EducationInterface {
   providedIn: 'root'
 })
 export class DataManagementService {
-
-  private jokePaths:string[]=[
-    "/assets/images/jokes/works.png",
-    "/assets/images/jokes/trimester.png",
-    "/assets/images/jokes/tests.png",
-    "/assets/images/jokes/support.png",
-    "/assets/images/jokes/progress.png",
-    "/assets/images/jokes/passing.jpeg",
-    "/assets/images/jokes/negativity.png",
-    "/assets/images/jokes/estimation.png",
-    "/assets/images/jokes/email.png",
-    "/assets/images/jokes/coder.png",
-    "/assets/images/jokes/business.png"
+  wallpaperChanged = new Subject<string>();
+  wallpaper:string;
+  private readonly jokesPath = '/assets/images/jokes/';
+  private jokeFiles:string[]=[
+    "works.png",
+    "trimester.png",
+    "tests.png",
+    "support.png",
+    "progress.png",
+    "passing.jpeg",
+    "negativity.png",
+    "estimation.png",
+    "email.png",
+    "coder.png",
+    "business.png",
+    "sandwich.png",
+  ]
+  private readonly wallpaperPath = '/assets/images/wallpapers/';
+  private readonly wallpaperFiles:string[]=[
+    "0.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
   ]
 
   constructor(private http: HttpClient) {
@@ -84,11 +100,17 @@ export class DataManagementService {
     return this.http.get(FileDirectoryEnum.I18N + lang);
   }
 
-
-
   getRandomJokePath():string{
-    const random = Math.floor(Math.random() * this.jokePaths.length);
-    return this.jokePaths[random];
+    return this.selectPathRandomly(this.jokesPath,this.jokeFiles);
+  }
+
+  getRandomWallpaper() {
+    this.wallpaper=this.selectPathRandomly(this.wallpaperPath,this.wallpaperFiles);
+    this.wallpaperChanged.next(this.wallpaper);
+  }
+  private selectPathRandomly(basePath:string,files:string[]){
+    const randomIndex = Math.floor(Math.random() * files.length);
+    return basePath + files[randomIndex]; 
   }
 
 

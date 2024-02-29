@@ -35,14 +35,14 @@
             </div>
     </div>
 
-        <div class="popup-body">
-            <div class="cv-wrapper" *ngIf="+windowKey === +enumCoparator.resume" >
+        <div class="popup-body" [ngSwitch]="+windowKey">
+            <div class="cv-wrapper" *ngSwitchCase="+enumCoparator.resume" >
                 <app-cv></app-cv>
             </div>
-            <div class="joke-wrapper" *ngIf="+windowKey === +enumCoparator.joke">
+            <div class="joke-wrapper" *ngSwitchCase="+enumCoparator.joke">
                 <img  [src]="jokePath" alt="joke"/>
             </div>
-            <div class="skills-wrapper" *ngIf="+windowKey === +enumCoparator.interests">
+            <div class="skills-wrapper" *ngSwitchCase="+enumCoparator.interests">
                 <pre>
                     <span class="comment">
                         ITEREST
@@ -56,7 +56,7 @@
                 </pre>
 
             </div>
-            <div class="experience-wrapper" *ngIf="+windowKey === +enumCoparator.experience">
+            <div class="experience-wrapper" *ngSwitchCase="+enumCoparator.experience">
                 <pre>
                     <span class="comment">
                         EXPERIENCE

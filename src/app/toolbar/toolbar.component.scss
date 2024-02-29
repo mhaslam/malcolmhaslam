@@ -1,0 +1,40 @@
+.navbar-nav li:hover>ul.dropdown-menu{
+    display: block;
+}
+.dropdown-submenu{
+    position: relative;
+}
+.dropdown-submenu>.dropdown-menu{
+    top:0;
+    margin-top: -5px;
+    left: 100%;
+}
+
+.navbar{
+    background: #194e6d80;
+    color: #fff;
+
+}
+.window-btn fa-icon{
+    color: #b5b5b5;
+  }
+  .window-btn fa-icon:hover{
+    color: #dc612c;
+  }
+  
+a {
+    color: #b5b5b5;
+  }
+a :hover{
+    color: #dc612c;
+  }
+  
+
+.datetime {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.navbar{
+    padding: 0;
+}
