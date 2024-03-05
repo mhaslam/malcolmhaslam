@@ -17,6 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets"
+              ]
+            },
             "outputPath": "dist/malcolmhaslam",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -83,6 +88,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets"
+              ]
+            },
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -93,8 +103,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-
+            "styles": [              
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],

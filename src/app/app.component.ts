@@ -9,6 +9,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { DataManagementService } from './data-management.service';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { Subscription } from 'rxjs';
+import { ColorTheme, FeelTheme, ThemeService } from './theme.service';
 
 
 @Component({
@@ -28,22 +29,40 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy{
   title = 'MalcolmHaslam';
-  wallpaperPath = '/assets/images/wallpapers/1.jpg'
+  wallpaperPath : string;
   wallpaperChangeSubs : Subscription;
+  colorTheme : ColorTheme = ColorTheme.DARK;
+  colorThemeSubs : Subscription;
+  feelTheme : FeelTheme = FeelTheme.PLAYFULL;
+  feelThemeSubs : Subscription;
+
   icons = {
     star: faStar
   }
 
-  constructor(private dataManagementService: DataManagementService) { }
+  constructor(private dataManagementService: DataManagementService, private themeService:ThemeService) { }
 
   ngOnInit(): void {
-    this.dataManagementService.getRandomWallpaper();
-    this.wallpaperChangeSubs = this.dataManagementService.wallpaperChanged.subscribe((wallpaper)=>{
+    this.themeService.setRandomWallpaper();
+    this.wallpaperChangeSubs = this.themeService.wallpaperChanged.subscribe((wallpaper)=>{
       this.wallpaperPath=wallpaper;
     });
+
+    this.colorThemeSubs = this.themeService.colorThemeChanged.subscribe((colorTheme)=>{
+      this.colorTheme = colorTheme;
+    });
+
+    this.feelThemeSubs = this.themeService.feelThemeChanged.subscribe((feelTheme)=>{
+      this.feelTheme = feelTheme;
+    });
+
+
+
   }
   ngOnDestroy(): void {
       this.wallpaperChangeSubs.unsubscribe();
+      this.colorThemeSubs.unsubscribe();
+      this.feelThemeSubs.unsubscribe();
   }
 
 }

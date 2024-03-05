@@ -1,10 +1,9 @@
-<div class="wrapper">
+<div class="wrapper" [attr.color-theme]="colorTheme" [attr.feel-theme]="feelTheme">
       <!-- Header -->
-      <header class = "main-header" [ngStyle]="{'background-image': 'url(' + wallpaperPath + ')'}">
+      <header class = "main-header" [ngStyle]="wallpaperPath? {'background-image': 'url(' + wallpaperPath + ')'}:''">
         <app-toolbar></app-toolbar>
         <div class="container">
             <div id= "intro-container" class="intro-text">
-                <!--img class="main-avatar" src="img/me-nofeatures.svg" alt=""-->
                 <div class='main-avatar'>                
                     <div class="features-container">
                         <div class="eye"></div>
@@ -17,7 +16,10 @@
                 </div>
 
                 <div class="star-light">
-                    <hr class="">
+                    <svg  width="250" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="0" x2="100" y2="0" style="stroke-width:10" />
+                        <line x1="150" y1="0" x2="250" y2="0" style="stroke-width:10" />
+                      </svg>
                     <fa-icon [icon]="icons.star"></fa-icon>
                 </div>
       
@@ -25,11 +27,9 @@
             <div id="intro-text-container" class="intro-text">
                 <div class="hello-text">
                     <h1 class="stroke" data-text="Hi, I'M MALCOLM">Hi, I'M MALCOLM</h1>
-                    <!-- <h1 class = "no-stroke">Hi, I'M MALCOLM</h1> -->
                 </div>
                 <div class="typewriter">
                     <h1 class = "stroke" data-text="I'M A WEB DEVELOPER">I'M A WEB DEVELOPER</h1>
-                    <!-- <h1 class = "no-stroke">I'M A WEB DEVELOPER</h1> -->
                 </div>                
             </div>
 

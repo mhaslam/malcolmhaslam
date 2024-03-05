@@ -51,9 +51,9 @@
     page-break-after: always;
   }
 }
-* {
+:host ::ng-deep * {
   color: #1c1c1b;
-  font-family: Lato;
+  font-family: Lato !important;
 }
 
 .cv-left{

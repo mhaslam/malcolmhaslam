@@ -2,7 +2,7 @@
      [style.zIndex]="zIndex" [style.top.px]="position.y" [style.left.px]="position.x" 
      (click)="onWindowClick()">
 
-        <div class="title-bar" (mousedown)="startDrag($event)">
+        <div class="title-bar" (mousedown)="startDrag($event)" (dblclick)="onTitleBarDoubleClick()">
             <div class="col-4"></div>
             <div class="col-4">        
                 <div class="title">
@@ -26,11 +26,6 @@
                     <a (click)="onClose($event)" class="window-btn close">
                         <fa-icon [icon]="icons.close"></fa-icon>
                     </a>
-                    <!-- <a *ngIf="+windowKey === +enumCoparator.joke" (click)="onRefresh()" class="window-btn refresh"><span class="info-icon"><i class="fa fa-refresh"></i></span></a>
-                    <a *ngIf="+windowKey === +enumCoparator.resume" (click)="onCVPrint()" class="window-btn print"><span class="info-icon"><i class="fa fa-sync-alt"></i></span></a>
-                    <a *ngIf="!isExpanded" (click)="onExpand()" class="window-btn expand"><span class="info-icon"><i class="fa fa-expand"></i></span></a>
-                    <a *ngIf="isExpanded" (click)="onMinimize()" class="window-btn minimize"><span class="info-icon"><i class="fa fa-minus"></i></span></a>
-                    <a (click)="onClose($event)" class="window-btn close"><span class="info-icon"><i class="fa fa-times"></i></span></a> -->
                 </div>
             </div>
     </div>

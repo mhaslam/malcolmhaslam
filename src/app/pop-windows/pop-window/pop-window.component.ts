@@ -43,9 +43,10 @@ export class PopWindowComponent implements OnInit, OnDestroy {
   }
 
 
-  constructor(private windowsService: WindowsService, private cvService: CvService, private dataManagementService: DataManagementService, @Inject(DOCUMENT) private _document: Document) {
-
-  }
+  constructor(private windowsService: WindowsService, 
+    private cvService: CvService, 
+    private dataManagementService: DataManagementService, 
+    @Inject(DOCUMENT) private _document: Document) {}
 
   ngOnInit(): void {
     this.enumCoparator = WindowsEnum;
@@ -73,6 +74,9 @@ export class PopWindowComponent implements OnInit, OnDestroy {
 
   onWindowClick() {
     this.windowsService.bringToFront(this.windowKey);
+  }
+  onTitleBarDoubleClick(){
+    this.isExpanded?this.onMinimize():this.onExpand();
   }
 
   startDrag($event): void {
@@ -103,8 +107,6 @@ export class PopWindowComponent implements OnInit, OnDestroy {
 
   onCVPrint() {
     this.printIconComponent.animation  = 'spin-pulse';
-    // Note that FaIconComponent.render() should be called to update the
-    // rendered SVG after setting/updating component inputs.
     this.printIconComponent.render();
     this.cvService.printCV().finally(()=>{
       this.printIconComponent.animation = null;

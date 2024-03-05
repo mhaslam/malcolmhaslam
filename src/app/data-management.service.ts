@@ -14,7 +14,6 @@ export enum LANG {
 }
 
 export interface I18nInterface {
-
   "config": {
     "headshotUrl": string,
     "info": string,
@@ -62,8 +61,7 @@ export interface EducationInterface {
   providedIn: 'root'
 })
 export class DataManagementService {
-  wallpaperChanged = new Subject<string>();
-  wallpaper:string;
+
   private readonly jokesPath = '/assets/images/jokes/';
   private jokeFiles:string[]=[
     "works.png",
@@ -79,24 +77,12 @@ export class DataManagementService {
     "business.png",
     "sandwich.png",
   ]
-  private readonly wallpaperPath = '/assets/images/wallpapers/';
-  private readonly wallpaperFiles:string[]=[
-    "0.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-  ]
+
 
   constructor(private http: HttpClient) {
   }
 
-  public getJSON(lang: LANG): Observable<any> {
+  public getLanguageJSON(lang: LANG): Observable<any> {
     return this.http.get(FileDirectoryEnum.I18N + lang);
   }
 
@@ -104,10 +90,6 @@ export class DataManagementService {
     return this.selectPathRandomly(this.jokesPath,this.jokeFiles);
   }
 
-  getRandomWallpaper() {
-    this.wallpaper=this.selectPathRandomly(this.wallpaperPath,this.wallpaperFiles);
-    this.wallpaperChanged.next(this.wallpaper);
-  }
   private selectPathRandomly(basePath:string,files:string[]){
     const randomIndex = Math.floor(Math.random() * files.length);
     return basePath + files[randomIndex]; 

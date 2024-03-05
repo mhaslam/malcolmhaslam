@@ -26,7 +26,7 @@ export class CvService {
 
     loadData(lang:LANG){
 
-        this.dataManagementService.getJSON(lang).subscribe(data => {
+        this.dataManagementService.getLanguageJSON(lang).subscribe(data => {
             this.isDataLoaded = true;
             this.language=lang;
             this.setData(data);

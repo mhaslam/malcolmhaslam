@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "themes";
+
 
 body {
     display: block;
@@ -20,7 +22,7 @@ body {
     transform-origin: right;
     max-height: 93.1vh;
   }
-  @font-face {
+@font-face {
     font-family: "xkcd";
     src: local("xkcd-script"), url(/assets/fonts/xkcd-script.ttf) format("truetype");
 }
@@ -40,19 +42,19 @@ body {
   src: url('assets/fonts/lato/Lato-Thin.ttf');
   font-weight: 100;
 }
-.title{
-  letter-spacing: 5px;
-}
-.subgroup{
-  margin-bottom: 30px;
-}
-p{
-  font-size: 12px;
-}
+// .title{
+//   letter-spacing: 5px;
+// }
+// .subgroup{
+//   margin-bottom: 30px;
+// }
+// p{
+//   font-size: 12px;
+// }
 
-.title{
-  color:#194f6e;
-}
-.fa{
-  color:#194f6e;
-}
+// .title{
+//   color:#ffffff;
+// }
+// .fa{
+//   color:#194f6e;
+// }
