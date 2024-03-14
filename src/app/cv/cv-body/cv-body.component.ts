@@ -6,7 +6,7 @@ import { Skills } from "./skills/skills.component";
     selector: 'app-cv-body',
     standalone: true,
     templateUrl: './cv-body.component.html',
-    styleUrl: './cv-body.component.css',
+    styleUrl: './cv-body.component.scss',
     imports: [Skills, ExperiencesComponent]
 })
 export class CvBodyComponent {

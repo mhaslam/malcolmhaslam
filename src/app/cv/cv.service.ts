@@ -1,38 +1,43 @@
 // src/app/data.service.ts
-import { ElementRef, Injectable } from '@angular/core';
+import { ElementRef, Inject, Injectable } from '@angular/core';
 import {  Subject } from 'rxjs';
-import { DataManagementService, I18nInterface, LANG } from '../data-management.service';
+import { DataManagementService, CvI18nInterface, CVLANG } from '../data-management.service';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CvService {
 
-    private data:I18nInterface;
+    private data:CvI18nInterface;
     isDataLoaded=false;
-    language:string;
+    language:CVLANG;
+    languageChanged = new Subject<CVLANG>();
     private printableArea:ElementRef;
 
     dataChanged = new Subject<{}>()
-    constructor(private dataManagementService:DataManagementService ) { }
+    constructor(@Inject(APP_BASE_HREF) public baseHref:string, private dataManagementService:DataManagementService ) { }
 
 
     
-    getData():I18nInterface{
+    getData():CvI18nInterface{
          return this.data; 
     }
 
-    loadData(lang:LANG){
+    loadData(lang:CVLANG){
 
-        this.dataManagementService.getLanguageJSON(lang).subscribe(data => {
+        this.dataManagementService.getCVLanguageJSON(lang).subscribe(data => {
             this.isDataLoaded = true;
-            this.language=lang;
+            if(this.language!==lang){
+              this.language=lang;
+              this.languageChanged.next(this.language);              
+            }
             this.setData(data);
           });
     }
-    setData(data:I18nInterface){
+    setData(data:CvI18nInterface){
         this.data=data;
         this.dataChanged.next(JSON.parse(JSON.stringify(data)));
     }

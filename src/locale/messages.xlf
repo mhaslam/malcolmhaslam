@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1737753151350322492" datatype="html">
+        <source><x id="PH" equiv-text="&quot;Hi, I&apos;m Malcolm&quot;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pop-windows/pop-window/pop-window.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7182974689040833178" datatype="html">
+        <source>Resume</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/taskbar/taskbar.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5958567575081359079" datatype="html">
+        <source>Interests</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/taskbar/taskbar.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3398353192845179101" datatype="html">
+        <source>Experience</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/taskbar/taskbar.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3042801934966030729" datatype="html">
+        <source>Joke</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/taskbar/taskbar.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1825596729373977542" datatype="html">
+        <source> Theme </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/toolbar/toolbar.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3892161059518616136" datatype="html">
+        <source>Dark</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/toolbar/toolbar.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="413116577994876478" datatype="html">
+        <source>Light</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/toolbar/toolbar.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5358676028277342727" datatype="html">
+        <source>Playful</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/toolbar/toolbar.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7245030760314302093" datatype="html">
+        <source>Serious</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/toolbar/toolbar.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5313740276274670782" datatype="html">
+        <source> Wallpaper </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/toolbar/toolbar.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8893285757291009420" datatype="html">
+        <source>random</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/toolbar/toolbar.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5734888861256751765" datatype="html">
+        <source>none</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/toolbar/toolbar.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

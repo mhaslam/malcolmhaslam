@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CvService } from '../../cv.service';
 import { ExperienceComponent } from './experience/experience.component';
-import { I18nInterface } from '../../../data-management.service';
+import { CvI18nInterface } from '../../../data-management.service';
 
 @Component({
   selector: 'app-experiences',
@@ -15,7 +15,7 @@ import { I18nInterface } from '../../../data-management.service';
 export class ExperiencesComponent implements OnInit, OnDestroy{
 
   private subscription: Subscription;
-  data:I18nInterface;
+  data:CvI18nInterface;
 
   constructor(private cvService:CvService){}
 

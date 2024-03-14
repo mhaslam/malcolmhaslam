@@ -5,7 +5,7 @@ import { faClose, faExpand, faMinus, faPrint, faRefresh } from '@fortawesome/fre
 import { Subscription } from 'rxjs';
 import { CvComponent } from '../../cv/cv.component';
 import { CvService } from '../../cv/cv.service';
-import { DataManagementService } from '../../data-management.service';
+import { DataManagementService, CVLANG } from '../../data-management.service';
 import { WindowInterface, WindowsEnum, WindowsService } from '../windows.service';
 
 
@@ -22,7 +22,7 @@ export class PopWindowComponent implements OnInit, OnDestroy {
 
   enumCoparator: any;
 
-  private subscription: Subscription;
+  private zIndexSubscription: Subscription;
 
 
   isActive = false;
@@ -32,6 +32,8 @@ export class PopWindowComponent implements OnInit, OnDestroy {
   position: { x: number, y: number };
   lastPosition: { x: number, y: number };
   jokePath: string = '';
+  cvLanguage:CVLANG;
+  LANG = CVLANG;
 
   //icons
   icons = {
@@ -51,12 +53,12 @@ export class PopWindowComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.enumCoparator = WindowsEnum;
     const windowObject: WindowInterface = this.windowsService.getWindowObject(this.windowKey);
-    this.title = windowObject.title;
+    this.title = $localize`${windowObject.title}`;
     this.isActive = windowObject.isActive;
     this.zIndex = windowObject.zIndex;
     this.position = windowObject.position;
 
-    this.subscription = this.windowsService.zIndexWindowsChanged.subscribe(() => {
+    this.zIndexSubscription = this.windowsService.zIndexWindowsChanged.subscribe(() => {
       const window = this.windowsService.getWindowObject(this.windowKey)
       this.zIndex = window.zIndex;
     })
@@ -64,7 +66,6 @@ export class PopWindowComponent implements OnInit, OnDestroy {
     if (+this.windowKey === +WindowsEnum.joke) {
       this.jokePath = this.dataManagementService.getRandomJokePath();
     }
-
   }
 
   onClose(event: MouseEvent) {
@@ -72,10 +73,14 @@ export class PopWindowComponent implements OnInit, OnDestroy {
     this.windowsService.closeWindow(this.windowKey);
   }
 
-  onWindowClick() {
+  onWindowClick(event:Event) {
+    event.stopPropagation();
+    event.preventDefault();
     this.windowsService.bringToFront(this.windowKey);
   }
-  onTitleBarDoubleClick(){
+  onTitleBarDoubleClick(event:Event){
+    event.stopPropagation();
+    event.preventDefault();
     this.isExpanded?this.onMinimize():this.onExpand();
   }
 
@@ -128,7 +133,7 @@ export class PopWindowComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.zIndexSubscription.unsubscribe();
   }
 
 }

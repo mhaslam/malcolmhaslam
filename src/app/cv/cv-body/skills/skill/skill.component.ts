@@ -7,7 +7,7 @@ import { SkillsInterface } from '../../../../data-management.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './skill.component.html',
-  styleUrl: './skill.component.css'
+  styleUrl: './skill.component.scss'
 })
 export class SkillComponent {
   @Input()  skill: SkillsInterface; 

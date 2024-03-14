@@ -1,0 +1,123 @@
+{
+    "config":{
+        "headshotUrl":"assets/images/me.jpeg",
+        "info":"INFO",
+        "skills":"SKILLS",
+        "languages":"LANGUAGES",
+        "interests":"INTERESTS",
+        "employment":"EMPLOYMENT HISTORY",
+        "ventures":"ENTREPRENEURIAL PROJECTS",
+        "education":"EDUCATION"
+    },
+    "header":{
+        "title":"MALCOLM HASLAM",
+        "subtitle":"BUSINESS SOFTWARE DESIGN AND DEVELOPMENT",
+        "expYears":"12 years experience",
+        "info":[
+            {"text":"+33 7 60 50 90 32","icon":"phone"},
+            {"text":"macolmhaslam@gmail.com","icon":"envelope"},
+            {"text":"02/10/1984","icon":"birthday-cake"},
+            {"text":"malcolmhaslam.com","icon":"globe"}
+        ]
+    },
+    "body":{
+        "skills":[
+            {
+                "title":"Front-end",
+                "items":[
+                    {"title":"JavaScript","level":4},
+                    {"title":"TypeScript","level":4},
+                    {"title":"HTML5","level":4},
+                    {"title":"CSS","level":4},
+                    {"title":"Angular","level":4},
+                    {"title":"RxJS","level":4},
+                    {"title":"NgRx","level":4}
+                ]
+            },
+            {
+                "title":"Back-end",
+                "items":[
+                    {"title":"Java","level":4},
+                    {"title":"MySQL","level":4},
+                    {"title":"PostgreSQL","level":4},
+                    {"title":"MongoDB","level":4}
+                ]
+            },
+            {
+                "title":"Development Tools and Methodologies",
+                "items":[
+                    {"title":"GIT","level":4},
+                    {"title":"NPM","level":4},
+                    {"title":"Maven","level":4},
+                    {"title":"Agile/Scrum","level":4}
+                ]
+            }
+        ],
+        "languages":[
+            {"title":"Spanish","level":5},
+            {"title":"English","level":5},
+            {"title":"French","level":4}         
+        ],
+        "interests":[
+            {"title":"Coffee", "text" : "2 years as a professional barista"},
+            {"title":"Rugby", "text" : "Captain of Monterrey's rugby team. U-19 coach"},
+            {"title":"Bicycle Travel", "text" : "Cycling journey from Chile to Mexico"}
+        ],
+        "employments": [
+            {
+                "company": "Fujitsu RunMyProcess",
+                "title": "R&D Developer",
+                "location": "Paris, France",
+                "date": "2013-2020",
+                "projects": [
+                    "Development software designed to access on-premise services (JDBC, SAP, LDAP, SMTP, etc.) via a secure tunnel.",
+                    "Development of an SDK for JavaScript applications. Backend development (JAVA-spring SQL and MongoDB).",
+                    "Overall transformation of the company's appearance (CSS). Maintenance of the company's Markdown engine (Python)."
+                ]
+            },
+            {
+                "company": "Tegik",
+                "title": "Project Engineer / Software Architect",
+                "location": "Monterrey, Mexico",
+                "date": "2009-2012",
+                "projects": [
+                    "Customization of open-source solutions: BPM (ProcessMaker), ERP (OpenBravo), and BI (Pentaho) in Javascript/PHP/PostgreSQL.",
+                    "Configuration and installation of virtual machines (VMWare), including database servers.",
+                    "Production of blueprints and functional specifications for on-site client requirement analysis."
+                ]
+            },
+            {
+                "company": "World Software Services/Temasis",
+                "title": "Software Engineer",
+                "location": "San Pedro, Mexico",
+                "date": "2008-2009",
+                "projects": [
+                    "Project Leader (Temasis): Design and development of a project administrator (extJS/PHP/MySQL).",
+                    "Jr. Developer (WSS): Maintenance of Banorte bank's web application (C#.NET/Javascript with SQLServer05)."
+                ]
+            }
+        ],
+        "ventures": [
+            {
+                "company": "MH Specialty Coffee",
+                "title": "Founder/Owner",
+                "location": "Crolles, France",
+                "date": "2020-2024",
+                "projects": [
+                    "Product development, business planning, accounting, strategy, and inventory management",
+                    "Machine maintenance, customer service, sales, and supplier relations"
+                ]
+            }
+        ],
+        "education": [
+            {
+                "company": "Tecnológico de Monterrey (ITESM)",
+                "title": "Bachelor of Science in Mechatronics Engineering (BAC+5)",
+                "location": "Monterrey, Mexico",
+                "date": "2003-2007"
+            }
+        ]
+            
+        
+    }
+}

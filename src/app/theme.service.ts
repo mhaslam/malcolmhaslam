@@ -1,6 +1,8 @@
-import { Inject, Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Inject, Injectable, OnInit } from '@angular/core';
+import { Observable, Subject, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
+import { DataManagementService } from './data-management.service';
 
 
 export enum ColorTheme {
@@ -8,22 +10,35 @@ export enum ColorTheme {
   LIGHT = 'light'
 }
 export enum FeelTheme {
-  
   SERIOUS = 'serious',
-  PLAYFULL = 'playfull'
+  PLAYFUL = 'playful'
 }
+export interface SiteLanguageInfo {
+  'title':{
+    'playful':TitleInfo,
+    'serious':TitleInfo  
+  }
+
+}
+export interface TitleInfo{
+  'title':string,
+  'subtitle':string
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class ThemeService {
+export class ThemeService implements OnInit{
   colorTheme: ColorTheme = ColorTheme.DARK;
   colorThemeChanged = new Subject<ColorTheme>();
-  feelTheme: FeelTheme = FeelTheme.PLAYFULL;
+  feelTheme: FeelTheme = FeelTheme.PLAYFUL;
   feelThemeChanged = new Subject<FeelTheme>();
   wallpaperChanged = new Subject<string>();
   wallpaper:string;
-  private readonly wallpaperPath = '/assets/images/wallpapers/';
+  titleInfo:TitleInfo;
+  private siteLanguageInfo:SiteLanguageInfo;
+  private readonly wallpaperPath = 'assets/images/wallpapers/';
   readonly wallpaperFiles:string[]=[
     "velo.jpg",
     "rugby.jpg",
@@ -37,25 +52,47 @@ export class ThemeService {
     "gresi1837.jpg",
     "gresi1837-2.jpg"
   ]
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor(@Inject(DOCUMENT) private document: Document, private dataManagementService:DataManagementService) {}
 
+  ngOnInit(): void {
+      
   }
-
   setColorTheme(colorTheme:ColorTheme) {
     this.colorTheme=colorTheme;
     this.colorThemeChanged.next(this.colorTheme);
   }
   serFeelTheme(feelTheme:FeelTheme) {
     this.feelTheme=feelTheme;
+    this.titleInfo=<TitleInfo>this.siteLanguageInfo.title[this.feelTheme];
     this.feelThemeChanged.next(this.feelTheme);
   }
 
+  getTitleInfo():Observable<TitleInfo>{
+    if(this.siteLanguageInfo){
+      return of(this.siteLanguageInfo.title[this.feelTheme]);
+    }
+    return this.loadSiteLanguageInfo().pipe(map(data=>{
+      this.titleInfo = <TitleInfo>data.title[this.feelTheme];
+      return this.titleInfo;
+    }));
+  }
+  loadSiteLanguageInfo():Observable<SiteLanguageInfo>{
+    return this.dataManagementService.getSiteLangJSON().pipe(map(data=>{
+            this.siteLanguageInfo = data;
+            return data;
+    }));
+    // this.dataManagementService.getSiteLangJSON().subscribe(data => {
+    //   this.titleInfo=<TitleInfo>data;
+    // });
+  }
   setRandomWallpaper() {
+    console.log("RANDOM");
+
     this.wallpaper=this.selectPathRandomly(this.wallpaperPath,this.wallpaperFiles);
     this.wallpaperChanged.next(this.wallpaper);
   }
   getWallpaperFiles(){
-    return this.wallpaperFiles.map(w => this.wallpaperPath + w);
+    return this.wallpaperFiles.map(w => this.dataManagementService.baseHref + this.wallpaperPath + w);
 
   }
   setWallpaper(wallpaper:string){
@@ -68,7 +105,7 @@ export class ThemeService {
   }
   private selectPathRandomly(basePath:string,files:string[]){
     const randomIndex = Math.floor(Math.random() * files.length);
-    return basePath + files[randomIndex]; 
+    return this.dataManagementService.baseHref +basePath + files[randomIndex]; 
   }
 
 }

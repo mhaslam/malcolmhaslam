@@ -23,6 +23,7 @@ import { FilenamePipe } from './filename.pipe';
   styleUrl: './toolbar.component.scss'
 })
 export class ToolbarComponent implements OnInit, OnDestroy{
+  baseHref:string;
   ColorTheme = ColorTheme;
   FeelTheme = FeelTheme;
   colorThemeSubs : Subscription;
@@ -45,6 +46,7 @@ export class ToolbarComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit() {
+    this.baseHref = this.dataManagementService.baseHref;
     this.clockSubscription = timer(0, 1000)
       .pipe(
         map(() => new Date()),

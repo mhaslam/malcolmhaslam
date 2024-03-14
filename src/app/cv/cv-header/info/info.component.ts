@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { I18nInterface } from '../../../data-management.service';
+import { CvI18nInterface } from '../../../data-management.service';
 
 @Component({
   selector: 'app-info',
@@ -13,7 +13,7 @@ import { I18nInterface } from '../../../data-management.service';
 })
 export class InfoComponent {
   
-  @Input() infos:I18nInterface['header']['info'][] ;
+  @Input() infos:CvI18nInterface['header']['info'][] ;
 
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas);

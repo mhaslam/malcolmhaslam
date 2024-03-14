@@ -6,14 +6,14 @@ import { CvBodyComponent } from "./cv-body/cv-body.component";
 import { CvHeaderComponent } from "./cv-header/cv-header.component";
 import { CvService } from './cv.service';
 import { LanguageSelectorComponent } from "./language-selector/language-selector.component";
-import { LANG } from '../data-management.service';
+import { CVLANG } from '../data-management.service';
 
 
 @Component({
     selector: 'app-cv',
     standalone: true,
     templateUrl: './cv.component.html',
-    styleUrl: './cv.component.css',
+    styleUrl: './cv.component.scss',
     imports: [CvHeaderComponent, CvBodyComponent, HttpClientModule, LanguageSelectorComponent]
 })
 export class CvComponent implements OnInit, AfterViewChecked, OnDestroy{
@@ -21,10 +21,11 @@ export class CvComponent implements OnInit, AfterViewChecked, OnDestroy{
     @ViewChild('printableArea') printableArea:ElementRef;    
     constructor(private cvService:CvService){}
     ngOnInit(): void {
-        this.cvService.loadData(LANG.FRA);
-
-
-
+        if(this.cvService.baseHref === '/en/'){
+            this.cvService.loadData(CVLANG.ENG);
+        }else{
+            this.cvService.loadData(CVLANG.FRA);
+        }
     }  
     
     generatePdf(divToPrint: HTMLElement) {

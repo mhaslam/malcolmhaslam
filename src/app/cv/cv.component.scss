@@ -1,3 +1,5 @@
+@import 'themes';
+
 .cv-main-page {
   width: 210mm;
   min-height: 297mm;
@@ -22,8 +24,6 @@
 }
 
 .cv-sub-page {
-  /* background: url(/assets/images/banner.svg); */
-  /* padding: 1.5cm; */
   white-space: normal;
   padding: 60px;
   height: 297mm;
@@ -52,10 +52,17 @@
   }
 }
 :host ::ng-deep * {
-  color: #1c1c1b;
+  //color: var(--psudo-black-color);
   font-family: Lato !important;
 }
+:host ::ng-deep .h1, .h2, .h3, .h4, .h5, .h6 {
+  color:#194F6E !important
+}
 
+
+:host ::ng-deep p {
+  color:var(--psudo-black-color);
+}
 .cv-left{
   padding-right: 0;
 }
@@ -72,6 +79,7 @@
 :host ::ng-deep .h5 {
   font-size: 0.75rem;
   margin-bottom: 0.25rem;
+  color:#194F6E;
 }
 :host ::ng-deep .h6 {
   font-size: 0.8rem;
@@ -90,21 +98,3 @@
   margin-bottom: 30px;
 }
 
-
-.print-icon-button {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-/* Optional: Add styles for the icon */
-.print-icon {
-  color: #194F6E;
-  font-size: 12px; /* Adjust icon size as needed */
-}
-.print-icon-button {
-  float: right; /* Float the language selector to the right */
-  margin-top: 20px; /* Adjust top margin */
-  font-size: 10px;
-}

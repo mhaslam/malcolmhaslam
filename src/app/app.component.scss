@@ -48,6 +48,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--secondary-text-color);
 }
 
+header {
+    height: 100vh;
+    overflow: hidden;
+}
+
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
@@ -190,7 +195,7 @@ div.main-avatar {
     display: block;
     margin: 0 auto 20px;
     height: 200px;
-    background-image: url(/assets/images/me-nofeatures.svg);
+    background-image: url(../assets/images/me-nofeatures.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -201,7 +206,7 @@ header .container {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
+    //min-height: 100vh;
 }
 
 img.background {
@@ -243,15 +248,22 @@ img.background {
     border-right: none;
     border-left: none;
     border-bottom: 0px solid #000;
-    -webkit-border-radius: 100px;
-    border-radius: 100px;
-    width: 19px;
     margin: 0px 0 0 0;
 }
 
 .cssMouth {
+    height: 18px;
+    border-bottom: 3px solid #000;
+    margin: 0 auto 0;
+    width: 15px;
+}
+.smiling {
+    height: 20px;
     -webkit-animation: smilingMouth 15s infinite;
     animation: smilingMouth 15s infinite;
+    width: 19px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
 }
 
 @-webkit-keyframes smilingMouth {

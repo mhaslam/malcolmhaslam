@@ -14,28 +14,28 @@
     <div class="offcanvas-body">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle toolbar-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle toolbar-link" role="button" data-bs-toggle="dropdown" aria-expanded="false" i18n>
                 Theme
               </a>
               <ul class="dropdown-menu">
-                <li><a [ngClass]="{'dropdown-item': true, 'active' : currentColorTheme===ColorTheme.DARK}" (click)="onColorThemeSelected(ColorTheme.DARK)">Dark</a></li>
-                <li><a [ngClass]="{'dropdown-item': true, 'active' : currentColorTheme===ColorTheme.LIGHT}" (click)="onColorThemeSelected(ColorTheme.LIGHT)">Light</a></li>
+                <li><a [ngClass]="{'dropdown-item': true, 'active' : currentColorTheme===ColorTheme.DARK}" (click)="onColorThemeSelected(ColorTheme.DARK)" i18n>Dark</a></li>
+                <li><a [ngClass]="{'dropdown-item': true, 'active' : currentColorTheme===ColorTheme.LIGHT}" (click)="onColorThemeSelected(ColorTheme.LIGHT)" i18n>Light</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a [ngClass]="{'dropdown-item': true, 'active' : currentFeelTheme===FeelTheme.PLAYFULL}" (click)="onFeelThemeSelected(FeelTheme.PLAYFULL)" >Playfull</a></li>
-                <li><a [ngClass]="{'dropdown-item': true, 'active' : currentFeelTheme===FeelTheme.SERIOUS}" (click)="onFeelThemeSelected(FeelTheme.SERIOUS)" >Serious</a></li>
+                <li><a [ngClass]="{'dropdown-item': true, 'active' : currentFeelTheme===FeelTheme.PLAYFUL}" (click)="onFeelThemeSelected(FeelTheme.PLAYFUL)" i18n>Playful</a></li>
+                <li><a [ngClass]="{'dropdown-item': true, 'active' : currentFeelTheme===FeelTheme.SERIOUS}" (click)="onFeelThemeSelected(FeelTheme.SERIOUS)" i18n>Serious</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" i18n>
                   Wallpaper
                 </a>
                 <ul class="dropdown-menu">
                   <li *ngFor="let wallpaper of wallpapers "><a [ngClass]="{'dropdown-item': true, 'active' : currentWallpaper===wallpaper}" (click)="onWallpaperSelected(wallpaper)">{{wallpaper | filename}}</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" (click)="onWallpaperRandom()">random</a></li>
-                  <li><a class="dropdown-item" (click)="onWallpaperNone()">none</a></li>
+                  <li><a class="dropdown-item" (click)="onWallpaperRandom()" i18n>random</a></li>
+                  <li><a class="dropdown-item" (click)="onWallpaperNone()" i18n>none</a></li>
                 </ul>
-              </li>
+            </li>
         </ul>
             <div class="nav-item">
             <a class="nav-link toolbar-link" href="https://www.linkedin.com/in/malcolmhaslam/" target="_blank" rel="noopener noreferrer">
@@ -51,6 +51,10 @@
             <a class="nav-link toolbar-link" href="https://www.linkedin.com/in/malcolmhaslam/" target="_blank" rel="noopener noreferrer">
               <fa-icon [icon]="['fab', 'x-twitter']"></fa-icon>
             </a>
+            </div>
+            <div class="nav-item">
+              <a *ngIf="baseHref != '/fr/'" href="/fr/" class="nav-link toolbar-link">🇫🇷</a>
+              <a *ngIf="baseHref == '/fr/'" href="/en/" class="nav-link toolbar-link">🇬🇧</a>
             </div>
     </div>
   </div>

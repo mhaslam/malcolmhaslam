@@ -1,103 +1,12 @@
-{   
-    "config":{
-        "headshotUrl":"/assets/images/me.jpeg",
-        "info":"INFO",
-        "skills":"SKILLS",
-        "languages":"LANGUAGES",
-        "employment":"EMPLOYMENT HISTORY",
-        "ventures":"ENTREPRENEURIAL PROJECTS",
-        "education":"EDUCATION"
-
-    },
-    "header":{
-        "title":"MALCOLM HASLAM",
-        "subtitle":"BUSINESS SOFTWARE DESIGN AND DEVELOPMENT",
-        "info":[
-            {"text":"+33 7 60 50 90 32","icon":"fa fa-phone"},
-            {"text":"macolmhaslam@gmail.com","icon":"fa fa-envelope"},
-            {"text":"02/10/1984","icon":"fa fa-birthday-cake"},
-            {"text":"malcolmhaslam.com","icon":"fa fa-globe"}
-        ]
-    },
-    "body":{
-        "info":{
-            "phone":"+33 760509032",
-            "e-mail":"macolmhaslam@gmail.com",
-            "date of birth":"02/10/1984",
-            "nationality":"Argentinian"
+{
+    "title":{
+        "playful":{
+            "title":"Hi, I'm Malcolm",
+            "subtitle":"I create web apps"
         },
-        "skills":{
-            "JavaScript/TypeScript":4,
-            "Java":4,
-            "CSS":4,
-            "MySQL/PostgreSQL":3,
-            "MongoDB":3,
-            "Angular":3,
-            "React":2
-        },
-        "languages":{
-            "Spanish":5,
-            "English":5,
-            "French":4
-        },
-        "employments":[
-            {
-                "title":"Developer R&D, Fujitsu RunMyProcess",
-                "location":"Paris, France",
-                "date":"2013-2020",
-                "projects":[
-                    "Design and development the Secure Enterprise Connector. A software designed to access on premise services (JDBC, SAP, LDAP, SMTP, etc.) through a secure tunnel based on google’s SDC",
-                    "Back-end development JAVA",
-                    "Design and development of RunMyProcess’ SDK for javascript applications.",
-                    "Development of the company’s Documentation. A modixed Markdoc engine for building markdown documentation built with (python).",
-                    "Company-wide look and feel transformation (css for front-end static pages)",
-                    "Analyse technology migration (documentation and front-end)"
-                ]
-            },
-            {
-                "title":"Project engineer / Software architect, Tegik",
-                "location":"Monterrey, Mexico",
-                "date":"2009-2012",
-                "projects":[
-                    "Design, customiHation and installation of open-source BPM (ProcessMaker), ERP (OpenBravo) and BI (Pentaho) solutions based on P;P/JAVA/MySQL source codes.",
-                    "Ensure project healthq manage developers and QA (3 developers)q design, planning and documentation.",
-                    "System conxguration, scripting, database management and function coding Jasper reports. Over 200 Jasper reports for ERP systems using IReport.",
-                    "Pentaho BI. Designing and applying various cubes for Bi repots in ERP and BPM projects.",
-                    "Blueprint and functional spec generation from on-site client reXuirement analysis."
-                ]
-            },
-            {
-                "title":"Software engineer, World Software Services/Temasis",
-                "location":"San Pedro   , Mexico",
-                "date":"2008-2009",
-                "projects":[
-                    "Design and development of web applications for BNXI (Banorte web application C#.NET/JavaScript with SQLServer05).",
-                    "Design and development of a VB.NET stand-alone application for a complez payroll calculation system using CSLA.NET for an international cruise catering company.",
-                    "Design and development of a project administrator using PHP and JavaScript (ExtJS libraries and adapters).",
-                    "Project management and QA (2 developers)."
-                ]
-            }
-        ],
-        "ventures":[
-            {
-                "title":"Founder/Owner of MH Specialty Coffee",
-                "location":"Crolles, France",
-                "date":"2020-2024",
-                "projects":[
-                    "Menu planning, product development, and stock management",
-                    "Machine maintenance",
-                    "Business planning, accounting, strategy, and bookkeeping",
-                    "Customer service, sales, and supplier relations"
-                ]
-            }
-        ],
-        "education":[
-            {
-                "title":"BACHELOR OF SCIENCE: Mechatronics engineering , Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)",
-                "date":"2013-2007"
-            }
-        ]
-            
-        
+        "serious":{
+            "title":"Malcolm Haslam",
+            "subtitle":"Web Developer"
+        }
     }
 }

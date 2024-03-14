@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit, inject } from '@angular/core';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TaskbarComponent } from './taskbar/taskbar.component';
@@ -10,6 +10,7 @@ import { DataManagementService } from './data-management.service';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { Subscription } from 'rxjs';
 import { ColorTheme, FeelTheme, ThemeService } from './theme.service';
+
 
 
 @Component({
@@ -28,22 +29,28 @@ import { ColorTheme, FeelTheme, ThemeService } from './theme.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, OnDestroy{
-  title = 'MalcolmHaslam';
+  title = "Hi, I'm Malcolm";
+  subtitle = "I'M A WEB DEVELOPER";
   wallpaperPath : string;
   wallpaperChangeSubs : Subscription;
   colorTheme : ColorTheme = ColorTheme.DARK;
   colorThemeSubs : Subscription;
-  feelTheme : FeelTheme = FeelTheme.PLAYFULL;
+  feelTheme : FeelTheme = FeelTheme.PLAYFUL;
+  FellTheme = FeelTheme;
   feelThemeSubs : Subscription;
 
   icons = {
     star: faStar
   }
 
-  constructor(private dataManagementService: DataManagementService, private themeService:ThemeService) { }
+  constructor( private themeService:ThemeService) { }
 
   ngOnInit(): void {
-    this.themeService.setRandomWallpaper();
+    console.log("RANDOM");
+    this.themeService.getTitleInfo().subscribe(data=>{
+      this.title = data.title;
+      this.subtitle = data.subtitle;
+    });
     this.wallpaperChangeSubs = this.themeService.wallpaperChanged.subscribe((wallpaper)=>{
       this.wallpaperPath=wallpaper;
     });
@@ -53,6 +60,8 @@ export class AppComponent implements OnInit, OnDestroy{
     });
 
     this.feelThemeSubs = this.themeService.feelThemeChanged.subscribe((feelTheme)=>{
+      this.title = this.themeService.titleInfo.title;
+      this.subtitle = this.themeService.titleInfo.subtitle;
       this.feelTheme = feelTheme;
     });
 

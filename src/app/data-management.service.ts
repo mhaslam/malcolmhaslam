@@ -1,19 +1,25 @@
 // src/app/data.service.ts
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { APP_BASE_HREF } from '@angular/common';
+import { SiteLanguageInfo } from './theme.service';
 
 
 export enum FileDirectoryEnum{
-  JOKES = '/assets/images/jokes/',
-  I18N = '/assets/locale/'
+  JOKES = 'assets/images/jokes/',
+  I18N = 'assets/locale/'
 }
-export enum LANG {
+export enum CVLANG {
+  ENG = 'cv-en-data.json',
+  FRA = 'cv-fr-data.json'
+}
+export enum SITELANG {
   ENG = 'en-data.json',
   FRA = 'fr-data.json'
 }
 
-export interface I18nInterface {
+export interface CvI18nInterface {
   "config": {
     "headshotUrl": string,
     "info": string,
@@ -57,12 +63,17 @@ export interface EducationInterface {
   "date": string
 }
 
+enum BASEHREF{
+  ENG = '/en/',
+  FRA = '/fr/' 
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataManagementService {
+  siteLanguage:SITELANG;
 
-  private readonly jokesPath = '/assets/images/jokes/';
   private jokeFiles:string[]=[
     "works.png",
     "trimester.png",
@@ -79,21 +90,27 @@ export class DataManagementService {
   ]
 
 
-  constructor(private http: HttpClient) {
+  constructor(@Inject(APP_BASE_HREF) public baseHref:string, private http: HttpClient) {
+    this.siteLanguage = (baseHref===BASEHREF.FRA)?SITELANG.FRA:SITELANG.ENG;
   }
 
-  public getLanguageJSON(lang: LANG): Observable<any> {
-    return this.http.get(FileDirectoryEnum.I18N + lang);
+
+  getSiteLangJSON(){
+    return this.http.get<SiteLanguageInfo>(this.baseHref+FileDirectoryEnum.I18N + this.siteLanguage);
+  }
+  getCVLanguageJSON(lang: CVLANG): Observable<any> {
+    return this.http.get(this.baseHref+FileDirectoryEnum.I18N + lang);
   }
 
   getRandomJokePath():string{
-    return this.selectPathRandomly(this.jokesPath,this.jokeFiles);
+    return this.selectPathRandomly(FileDirectoryEnum.JOKES,this.jokeFiles);
   }
 
   private selectPathRandomly(basePath:string,files:string[]){
     const randomIndex = Math.floor(Math.random() * files.length);
-    return basePath + files[randomIndex]; 
+    return this.baseHref + basePath + files[randomIndex]; 
   }
+
 
 
 }

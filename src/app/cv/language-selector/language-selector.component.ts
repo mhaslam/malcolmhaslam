@@ -3,18 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { CvService } from '../cv.service';
-import { LANG } from '../../data-management.service';
+import { CVLANG } from '../../data-management.service';
 
 @Component({
   selector: 'app-language-selector',
   standalone: true,
   imports: [CommonModule,FormsModule],
   templateUrl: './language-selector.component.html',
-  styleUrl: './language-selector.component.css'
+  styleUrl: './language-selector.component.scss'
 })
 export class LanguageSelectorComponent implements OnInit {
 
-  langKeys = Object.keys(LANG);
+  langKeys = Object.keys(CVLANG);
+  LANG = CVLANG;
   selectedOption: string;
   subscription:Subscription;
   
@@ -24,14 +25,16 @@ export class LanguageSelectorComponent implements OnInit {
   ngOnInit() {
     this.subscription=this.cvService.dataChanged.subscribe(()=>{
 
-      const index = Object.values(LANG).indexOf(this.cvService.language as LANG);
-      const key = Object.keys(LANG)[index];
+      const index = Object.values(CVLANG).indexOf(this.cvService.language as CVLANG);
+      const key = Object.keys(CVLANG)[index];
       this.selectedOption= key;
 
     });
   }
   onLanguageChange(event: Event) {
-    this.cvService.loadData(LANG[(event.target as HTMLSelectElement).value]);
+    event.stopPropagation();
+    event.preventDefault();
+    this.cvService.loadData(CVLANG[(event.target as HTMLSelectElement).value]);
   }
 
 

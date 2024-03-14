@@ -1,9 +1,11 @@
 <div [ngClass]="{popupContainer:true, active:true, expanded:isExpanded}" 
      [style.zIndex]="zIndex" [style.top.px]="position.y" [style.left.px]="position.x" 
-     (click)="onWindowClick()">
+     (click)="onWindowClick($event)"
+     >
 
-        <div class="title-bar" (mousedown)="startDrag($event)" (dblclick)="onTitleBarDoubleClick()">
-            <div class="col-4"></div>
+        <div class="title-bar" (mousedown)="startDrag($event)" (dblclick)="onTitleBarDoubleClick($event)">
+            <div class="col-4">
+            </div>
             <div class="col-4">        
                 <div class="title">
                     <h2>{{title | uppercase}}</h2>
@@ -11,6 +13,7 @@
             </div>
             <div class="col-4">
                 <div  class="window-buttons">
+
                     <a *ngIf="+windowKey === +enumCoparator.joke" (click)="onRefresh()" class="window-btn refresh">
                         <fa-icon [icon]="icons.refresh"></fa-icon>
                     </a>
